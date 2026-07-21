@@ -1,5 +1,4 @@
-# PR5-Employee-Management-System
-# 🏢 Employee Management System (OOP Wrapper)
+# PR5-Employee-Management-System (OOP Wrapper)
 
 A Python-based **Employee Management System** developed using **Object-Oriented Programming (OOP)** concepts. This project demonstrates the practical implementation of classes, inheritance, encapsulation, method overriding, constructors, destructors, getters/setters, `super()`, `issubclass()`, and a menu-driven console application.
 
