@@ -53,6 +53,7 @@ class Developer(Employee):
 employee1 = None
 manager1 = None
 developer1 = None
+
 print("--- Python OOP Project: Employee Management System ---")
 while True:
     print("\nChoose an option:")
@@ -61,7 +62,11 @@ while True:
     print("3. Create a Developer")
     print("4. Show Details")
     print("5. Exit")
-    choice1 = int(input("\nEnter your choice: "))
+    try:
+        choice1 = int(input("Enter your choice: "))
+    except ValueError:
+        print("Invalid input! Please enter only a number.")
+        continue
     match choice1:
         case 1:
             emp_name = input("\nEnter Name: ")
@@ -69,9 +74,7 @@ while True:
             emp_id = input("Enter Employee ID: ")
             emp_salary = float(input("Enter salary:"))
 
-            employee1 = Employee(
-                emp_id, emp_name, emp_age, emp_salary
-            )  # created object.
+            employee1 = Employee(emp_id, emp_name, emp_age, emp_salary)  # created object.
             print(f"\nEmployee Created with name: {emp_name}, age: {emp_age}, ID: {emp_id}, and salary: ${emp_salary}.")
             # print(issubclass(Employee,Developer))
             print("\n--- Choose another operation ---")
@@ -140,7 +143,7 @@ while True:
         case 5:
             print("\nExiting the system. All resources have been freed.")
             print("\nGoodbye!")
-            break
+            break 
 
         case _:
             print("Invalid choice!")
