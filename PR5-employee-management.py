@@ -1,3 +1,8 @@
+from abc import ABC, abstractmethod
+class Person(ABC):
+    @abstractmethod
+    def display(self):
+        pass
 class Employee:
     def __init__(self, employee_id="", name="", age=0, salary=0):
         self.__employee_id = employee_id
@@ -70,9 +75,9 @@ while True:
     match choice1:
         case 1:
             emp_name = input("\nEnter Name: ")
-            emp_age = int(input("Enter Age:"))
+            emp_age = int(input("Enter Age: "))
             emp_id = input("Enter Employee ID: ")
-            emp_salary = float(input("Enter salary:"))
+            emp_salary = float(input("Enter salary: "))
 
             employee1 = Employee(emp_id, emp_name, emp_age, emp_salary)  # created object.
             print(f"\nEmployee Created with name: {emp_name}, age: {emp_age}, ID: {emp_id}, and salary: ${emp_salary}.")
