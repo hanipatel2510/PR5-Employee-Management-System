@@ -8,7 +8,9 @@ class Employee:
         self.__employee_id = employee_id
         self.name = name
         self.age = age
-        self.__salary = salary
+        self.__salary = 0
+
+        self.set_salary(salary)
 
     def set_employee_id(self, employee_id):
         self.__employee_id = employee_id
@@ -17,7 +19,10 @@ class Employee:
         return self.__employee_id
 
     def set_salary(self, salary):
-        self.__salary = salary
+        if salary > 0:
+            self.__salary = salary
+        else:
+            print("Invalid Salary! Salary must be greater than 0.")
 
     def get_salary(self):
         return self.__salary
@@ -80,7 +85,7 @@ while True:
             emp_salary = float(input("Enter salary: "))
 
             employee1 = Employee(emp_id, emp_name, emp_age, emp_salary)  # created object.
-            print(f"\nEmployee Created with name: {emp_name}, age: {emp_age}, ID: {emp_id}, and salary: ${emp_salary}.")
+            print(f"\nEmployee Created with name: {emp_name}, age: {emp_age}, ID: {emp_id}, and salary: ${employee1.get_salary()}")
             # print(issubclass(Employee,Developer))
             print("\n--- Choose another operation ---")
 
@@ -98,7 +103,7 @@ while True:
                 manager_salary,
                 manager_department,
             )  # object created for manager
-            print(f"\nManager Created with name: {manager_name}, age: {manager_age}, ID: {manager_id}, salary: ${manager_salary}, and department: {manager_department}.")
+            print(f"\nManager Created with name: {manager_name}, age: {manager_age}, ID: {manager_id}, salary: ${manager1.get_salary()}, and department: {manager_department}.")
             print(issubclass(Manager, Employee))
             print("\n--- Choose another operation ---")
 
@@ -115,7 +120,7 @@ while True:
                 developer_salary,
                 developer_programming_language,
             )  # object created for Developer
-            print(f"Developer created name: {developer_name}, age: {developer_age}, ID: {developer_id}, salary: ${developer_salary}, and programming language: {developer_programming_language}.")
+            print(f"Developer created name: {developer_name}, age: {developer_age}, ID: {developer_id}, salary: ${developer1.get_salary()}, and programming language: {developer_programming_language}.")
             print(issubclass(Developer, Employee))
             print("\n--- Choose another operation ---")
 
