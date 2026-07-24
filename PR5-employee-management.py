@@ -3,7 +3,7 @@ class Person(ABC):
     @abstractmethod
     def display(self):
         pass
-class Employee:
+class Employee(Person):
     def __init__(self, employee_id="", name="", age=0, salary=0):
         self.__employee_id = employee_id
         self.name = name
